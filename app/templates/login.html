@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+    <!--
+    <form>
+        <button formaction="/">Home</button>
+    </form>
+    -->
+    <div class="login container">
+        <h1 class="login-header">Login</h1>
+        <i class="fab fa-twitter"><img src="https://img.icons8.com/color/50/000000/twitter--v1.png"/></i>
+        <form class="login form" action="/signin" method="POST">
+            Username:
+            <input type="text" name="username" required>
+            Password:
+            <input type="password" name="password" required>
+            <input id="login-input"type="submit" name="login">
+            {% if error == 'login' %}
+            The wrong username or password was entered.
+            {% endif %}
+        </form>
+        <form class="signup">
+            Don't have an account?
+            <button id="signup-login" formaction="/signup">Create an account</button>
+        </form>
+    </div>
+</body>
+</html>

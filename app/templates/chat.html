@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Chat</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/style.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+        
+        var socket = io();
+
+        // connection
+        // client informs server that a user has joined
+        socket.on('connect', function() {
+            socket.emit('join', { username: 'John' }); // Send a join message with a username
+        });
+
+        // new message handling
+        socket.on('new_message', function(data){
+            var message = data.username + ': ' + data.message;
+            displayMessage(message);
+        });
+
+        // Send a message to the server
+        function sendMessage() {
+            
+            // take input from the message-input tag in the html and trim the spaces
+            var messageInput = document.getElementById('message-input');
+            var message = messageInput.value.trim();
+
+            // handle blank message case
+            if (message !== '') {
+                socket.emit('send_message', { message: message });
+                messageInput.value = ''; // empty out the message input so future inputs can be used
+            }
+        }
+
+        // Display the message on the page
+        function displayMessage(message) {
+            var messageContainer = document.getElementById('message-container'); // find the container that stores the received messages
+            var messageElement = document.createElement('p'); // create p tag
+
+            messageElement.textContent = message; // fill in the container with the message
+            messageContainer.appendChild(messageElement); // end off the p tag
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="chat-container">
+        <h1 class="chat-h1">Chat</h1>
+        <div id="message-container"></div>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="chat-send" onclick="sendMessage()">Send</button>
+    </div>
+</body>
+</html>

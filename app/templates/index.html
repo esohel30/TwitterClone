@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Explore / Twitter</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='explore.png') }}">
+    <link rel='stylesheet' type='text/css' media='screen' href="{{url_for('static', filename='css/style.css')}}">
+    <script src="https://kit.fontawesome.com/6fed95e999.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/chirp-2" rel="stylesheet">
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="layout">
+        <div id="left-sidebar" style="padding-left: 5vw;">
+            <header class="flex" style="width: 200px; align-items: flex-end;">
+                <div class="container flex" style="height: 100%; position: fixed;">
+                    <div class="button flex" style="align-items: flex-start;">
+                        <img class="flex" src="{{ url_for('static', filename='icon.avif') }}" style="height: 25px;">
+                    </div>
+        
+                    <nav class="navigation flex">
+                        <a class="link flex">
+                            <div class="button flex">
+                                <div class="flex">
+                                    <img src="{{ url_for('static', filename='search.png') }}" style="height: 23px;">
+                                </div>
+                                <div class="text" style="font-weight: bold;">Explore</div>
+                            </div>
+                        </a>
+        
+                        <a class="link flex">
+                            <div class="button flex">
+                                <div class="flex">
+                                    <img src="{{ url_for('static', filename='settings.png')}}" style="height: 23px;">
+                                </div>
+                                <div class="text">Settings</div>
+                            </div>
+                        </a>
+                    </nav>
+                </div>
+            </header>
+        </div>
+
+        <div id="main" style="padding-left: 8vw; padding-right: 8vw;">
+
+            <div id="user-tweet-container">
+                <form action="/create_tweet" method="POST">
+                    <textarea name="content" placeholder="Tweet content" required></textarea>
+                    <button type="submit">Tweet</button>
+                </form>
+            </div>
+
+            {% for tweet in data|reverse %}
+
+            <div class="twitter-comment">
+                <div class="comment-header">
+                  <img src="{{tweet[0]}}" alt="Profile Picture">
+                  <span class="username">{{tweet[2]}}</span>
+                  <span class="name">@{{tweet[1]}}</span>
+                </div>
+                <div class="comment-body">
+                  <p>{{tweet[3]}}</p>
+                </div>
+                <div class="comment-actions">
+                  <a href="#">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>{{tweet[4]}} Likes</span>
+                  </a>
+                </div>
+              </div>
+
+            {% endfor %}
+        </div>
+        <div id="right-sidebar">
+            <form action="/logout" method="POST">
+                <button id="logout" type="submit">Logout</button>
+            </form>
+
+            <div id="chat-button-container">
+                <form action="/chat">
+                    <button id="chat-button-index" type="submit">Chat</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
