@@ -53,4 +53,3 @@ This project is a web-based social media and chat application built using Flask,
 5. Launch the Application: 
    `python3 __init.py__`
 
-Project for Stuyvesant Software development Class 
