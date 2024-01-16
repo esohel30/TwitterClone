@@ -32,10 +32,6 @@ This project is a web-based social media and chat application built using Flask,
 - Configured with debug mode on for development.
 - Runs using SocketIO to support real-time web sockets.
 
-## Usage
-
-Ideal for users interested in social media and real-time chatting, and as a learning resource for integrating Flask with technologies like SocketIO. Suitable for developers building a social media platform prototype.
-
 #### Enhanced Visual Experience
 
 
