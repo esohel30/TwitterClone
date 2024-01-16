@@ -23,13 +23,17 @@ Twitter Clone: The goal was to create an application that mimics much of the fun
 <img width="1245" alt="Screen Shot 2024-01-15 at 6 25 49 PM" src="https://github.com/esohel30/TwitterClone/assets/90656205/7a4adbbf-e0cd-4783-b3b0-fcf6fe0a825e">
 <img width="1371" alt="Screen Shot 2024-01-15 at 6 40 28 PM" src="https://github.com/esohel30/TwitterClone/assets/90656205/639d12f9-6193-4e79-9241-4a51df931a16">
 
-#### Installation
+#### Installation Guide
 
-1) git clone git@github.com:esohel30/Twitter_clone.git
-2) cd FinalProjectSoftDev
-3) pip install -r requirements.txt
-4) cd app
-5) python3 __init.py__
-
+1. Clone the Repository: 
+   `git clone git@github.com:esohel30/Twitter_clone.git`
+2. Navigate to the Project: 
+   `cd FinalProjectSoftDev`
+3. Install Dependencies: 
+   `pip install -r requirements.txt`
+4. Enter the Application Directory: 
+   `cd app`
+5. Launch the Application: 
+   `python3 __init.py__`
 
 Project for Stuyvesant Software development Class 
