@@ -19,9 +19,9 @@ Twitter Clone: The goal was to create an application that mimics much of the fun
 
 
 # Images of website live 
-
-<img width="1245" alt="Screen Shot 2024-01-15 at 6 25 49 PM" src="https://github.com/esohel30/TwitterClone/assets/90656205/7a4adbbf-e0cd-4783-b3b0-fcf6fe0a825e">
-<img width="1371" alt="Screen Shot 2024-01-15 at 6 40 28 PM" src="https://github.com/esohel30/TwitterClone/assets/90656205/639d12f9-6193-4e79-9241-4a51df931a16">
+<img width="1300" alt="Screen Shot 2024-01-15 at 7 11 13 PM" src="https://github.com/esohel30/TwitterClone/assets/90656205/0f38cd3e-7614-4183-94c8-8f59894ad87f">
+<img width="1300" alt="Screen Shot 2024-01-15 at 6 25 49 PM" src="https://github.com/esohel30/TwitterClone/assets/90656205/7a4adbbf-e0cd-4783-b3b0-fcf6fe0a825e">
+<img width="1300" alt="Screen Shot 2024-01-15 at 6 40 28 PM" src="https://github.com/esohel30/TwitterClone/assets/90656205/639d12f9-6193-4e79-9241-4a51df931a16">
 
 #### Installation Guide
 
