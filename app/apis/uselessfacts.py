@@ -7,6 +7,4 @@ def fact_jsonify():
 def get_fact():
     json = fact_jsonify()
     return json['text']
-
-
-# print(get_fact())
+    
