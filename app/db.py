@@ -13,7 +13,7 @@ def db_close():
     db.close()
 
 def tweet_table_init():
-    c =  db_connect()
+    c = db_connect()
     c.execute("CREATE TABLE IF NOT EXISTS tweets (pfp text, username text, name text, content text, likes int)")
     db_close()
 
@@ -25,7 +25,7 @@ def create_tweet(pfp, username, name, content, likes):
 
 def return_tweets():
     c = db_connect()
-    c.execute("SELECT * FROM tweets")
+    c.execute("SELECT * FROM tweets")  # SQL commands
     retVal = c.fetchall()
     db_close()
     return retVal
